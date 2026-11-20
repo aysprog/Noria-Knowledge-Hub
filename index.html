@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Practical, carefully written guides for accounts, payments, privacy, orders and troubleshooting."
+    />
+    <title>Noria — The Knowledge Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=DM+Serif+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="wordmark" href="#"
+        ><span class="monogram">N</span><span>NORIA<small>SUPPORT & GUIDANCE</small></span></a
+      >
+      <nav aria-label="Main navigation">
+        <a href="#topics">Topics</a><a href="#library">Article library</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow light">SUPPORT, WITHOUT THE FRICTION</p>
+          <h1>Find clarity.<br /><em>Move forward.</em></h1>
+          <p class="hero-lede">
+            Practical answers for the moments when you need them. Browse our guides by topic and
+            read them in full.
+          </p>
+        </div>
+        <aside class="hero-aside" aria-label="Library information">
+          <span class="aside-index">NORIA KNOWLEDGE LIBRARY</span>
+          <div class="orbit"><span>✳</span><i></i><b></b></div>
+          <p>Good information<br />creates confident<br /><em>decisions.</em></p>
+          <small>NORIA</small>
+        </aside>
+        <div class="hero-bottom"><span>HELP CENTRE</span><span>ARTICLES & SUPPORT</span></div>
+      </section>
+
+      <section class="topic-section page-section" id="topics">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">THE COLLECTIONS</p>
+            <h2>Find your <em>subject.</em></h2>
+          </div>
+          <span class="section-count">05 COLLECTIONS</span>
+        </div>
+        <div class="topic-grid" id="topicGrid"></div>
+      </section>
+
+      <section class="library-section page-section" id="library">
+        <div class="library-heading">
+          <div>
+            <p class="eyebrow">THE COMPLETE LIBRARY</p>
+            <h2>Every answer,<br /><em>in one place.</em></h2>
+            <p class="library-subtitle">
+              Browse the latest guidance and select an article to view the full information.
+            </p>
+          </div>
+        </div>
+        <div class="library-summary">
+          <strong id="articleCount"></strong><span>HELP & INFORMATION</span>
+        </div>
+        <div class="article-catalog" id="articleCatalog"></div>
+      </section>
+    </main>
+    <footer class="footer">
+      <a class="wordmark footer-mark" href="#"
+        ><span class="monogram">N</span><span>NORIA<small>SUPPORT & GUIDANCE</small></span></a
+      >
+      <p>Thoughtful guidance for everyday decisions.</p>
+      <div><a href="#topics">Collections</a><a href="#library">All articles</a></div>
+      <small>© <span id="year"></span> Noria</small>
+    </footer>
+    <dialog id="articleDialog" class="article-dialog">
+      <button id="dialogClose" class="dialog-close" aria-label="Close article">×</button>
+      <div id="dialogBody"></div>
+    </dialog>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
