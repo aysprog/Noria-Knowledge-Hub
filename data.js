@@ -28,6 +28,34 @@ window.NORIA_ARTICLES = [
       "Never share a one-time verification code with someone who contacts you unexpectedly. Support staff should not need your password or sign-in code.",
   },
   {
+    id: "password-reset",
+    category: "Account & profile",
+    title: "Reset a forgotten password safely",
+    deck: "Follow the official recovery route and avoid common reset-link mistakes.",
+    read: "4 min",
+    featured: true,
+    sections: [
+      [
+        "Start from the official sign-in page",
+        "Open the service directly using a saved bookmark or by typing its known address. Choose Forgot password? and enter the email address associated with your account. Do not use reset links sent by unknown people or unsolicited messages.",
+      ],
+      [
+        "Use the newest reset email",
+        "Check your inbox and spam folder. If you request more than one reset email, use the newest message; older links may no longer work. Open the link on a device you trust and complete the process promptly.",
+      ],
+      [
+        "Choose a strong replacement",
+        "Create a long, unique password that you do not use on another site. A password manager can generate and store unique passwords. Avoid names, birthdays, keyboard patterns and small variations of an old password.",
+      ],
+      [
+        "After the reset",
+        "Sign in with the new password. If the service offers active-session controls, review devices and sign out of sessions you do not recognise. Turn on two-factor authentication where available.",
+      ],
+    ],
+    callout:
+      "A legitimate password reset should never ask you to send your current password to a person by email, chat or phone.",
+  },
+  {
     id: "billing-payment-methods",
     category: "Payments & billing",
     title: "Add or replace a payment method",
@@ -54,6 +82,34 @@ window.NORIA_ARTICLES = [
     ],
     callout:
       "Never send full card numbers, security codes or banking passwords through a support form.",
+  },
+  {
+    id: "refund-request",
+    category: "Payments & billing",
+    title: "How to prepare a clear refund request",
+    deck: "Gather the right information so a billing issue can be reviewed efficiently.",
+    read: "5 min",
+    featured: false,
+    sections: [
+      [
+        "Check the refund terms",
+        "Review the service's refund, cancellation and renewal terms first. Eligibility can depend on the product, purchase date, usage, region and payment provider. If the terms are unclear, ask support to explain the applicable policy rather than assuming an outcome.",
+      ],
+      [
+        "Gather useful evidence",
+        "Prepare the order or invoice reference, purchase date, amount and a short description of the issue. If something did not work as expected, include the steps you took and any error message. Share only information requested through the official support channel.",
+      ],
+      [
+        "Write a concise explanation",
+        "State what you purchased, what happened, what resolution you are requesting and any troubleshooting already completed. Keep the message factual and polite. Avoid sending repeated requests for the same transaction unless asked.",
+      ],
+      [
+        "Track the response",
+        "Save the support reference number and note the date you submitted the request. If the payment was made through an app store, bank or third-party provider, their refund process may also apply.",
+      ],
+    ],
+    callout:
+      "A refund request is not a guarantee of approval. The decision depends on the relevant terms and the facts of the transaction.",
   },
   {
     id: "privacy-controls",
@@ -84,6 +140,34 @@ window.NORIA_ARTICLES = [
       "Privacy controls differ by service. Read the description beside each setting; do not assume a toggle controls every kind of data processing.",
   },
   {
+    id: "recognise-phishing",
+    category: "Privacy & security",
+    title: "Recognise suspicious messages and phishing links",
+    deck: "A practical checklist for spotting messages designed to steal information.",
+    read: "6 min",
+    featured: false,
+    sections: [
+      [
+        "Notice the pressure tactics",
+        "Be cautious of unexpected messages that demand immediate action, threaten account closure, promise prizes or ask you to confirm sensitive details. Urgency is often used to stop people checking whether a request is genuine.",
+      ],
+      [
+        "Inspect the sender and destination",
+        "Check the full sender address, not just the display name. On a computer, hover over a link to inspect its destination; on mobile, press and hold only if your device safely previews the address. Watch for misspellings, extra words and lookalike domains.",
+      ],
+      [
+        "Do not share secrets",
+        "Never provide your password, one-time code, recovery code or full payment details in response to an unsolicited message. A real organisation should provide a secure route for account actions.",
+      ],
+      [
+        "If you clicked",
+        "Close the page. If you entered a password, go directly to the official service and change it immediately; change it anywhere else it was reused. Enable 2FA, review active sessions and contact the organisation through a known channel. If payment information was exposed, contact your bank or card provider.",
+      ],
+    ],
+    callout:
+      "When uncertain, do not reply or click. Open the service independently using its official app or known website.",
+  },
+  {
     id: "order-status",
     category: "Orders & delivery",
     title: "Track an order and understand status updates",
@@ -112,6 +196,34 @@ window.NORIA_ARTICLES = [
       "Delivery estimates are estimates, not guarantees. Weather, customs, peak periods and carrier capacity can affect the schedule.",
   },
   {
+    id: "change-delivery",
+    category: "Orders & delivery",
+    title: "Change a delivery address or delivery preference",
+    deck: "Act early and understand when an order can no longer be edited.",
+    read: "5 min",
+    featured: false,
+    sections: [
+      [
+        "Check the order stage",
+        "Address changes are usually easiest before an order is packed or dispatched. Open the order details and look for Edit delivery details. If the order is already with a carrier, the seller may no longer be able to change it.",
+      ],
+      [
+        "Make the change through the official account",
+        "Update the address or available delivery preference and save. Review every line, including postcode, building number, unit and contact number. Confirm that the updated details appear on the order summary.",
+      ],
+      [
+        "If editing is unavailable",
+        "Contact support promptly with the order reference and the correction needed. Do not send payment credentials. If the carrier offers a secure delivery-management service, check whether rerouting or collection is available.",
+      ],
+      [
+        "For future orders",
+        "Keep saved addresses current and label them clearly, such as Home or Office. Remove outdated addresses you no longer use.",
+      ],
+    ],
+    callout:
+      "Some items, sellers or delivery services cannot be redirected after dispatch. Check the available options before relying on a change.",
+  },
+  {
     id: "troubleshoot-basics",
     category: "Troubleshooting",
     title: "A reliable first-check routine when something fails",
@@ -138,5 +250,33 @@ window.NORIA_ARTICLES = [
     ],
     callout:
       "Do not repeatedly submit a payment, booking or order form when the result is uncertain. First check the account or confirmation history to avoid duplicates.",
+  },
+  {
+    id: "clear-cache",
+    category: "Troubleshooting",
+    title: "When to clear cache and cookies — and what to expect",
+    deck: "Understand the difference between temporary files and sign-in data before clearing them.",
+    read: "4 min",
+    featured: false,
+    sections: [
+      [
+        "Cache and cookies are different",
+        "A browser cache stores copies of site resources to help pages load faster. Cookies and site storage can keep preferences and sign-in state. Clearing them may solve stale-page problems, but it can also sign you out or reset saved preferences.",
+      ],
+      [
+        "Try a low-impact check first",
+        "Reload the page. Then open it in a private window or another browser. If it works there, the issue may be related to stored site data or an extension.",
+      ],
+      [
+        "Clear data for one site",
+        "In your browser's privacy or site settings, find the affected website and clear its stored data if you are comfortable signing in again. Browser menus differ, so consult the browser's own help instructions if needed.",
+      ],
+      [
+        "After clearing",
+        "Reopen the site from its known address, sign in and test again. If the issue remains across browsers and devices, it may not be caused by local browser data.",
+      ],
+    ],
+    callout:
+      "Before clearing cookies, make sure you know how to access your account and can receive any required verification message.",
   },
 ];

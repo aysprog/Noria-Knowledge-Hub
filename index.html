@@ -22,8 +22,17 @@
         ><span class="monogram">N</span><span>NORIA<small>SUPPORT & GUIDANCE</small></span></a
       >
       <nav aria-label="Main navigation">
-        <a href="#topics">Topics</a><a href="#library">Article library</a>
+        <a href="#topics">Topics</a><a href="#library">Article library</a
+        ><a href="#contact">Get support</a>
       </nav>
+      <button
+        class="mobile-menu"
+        id="mobileMenu"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
     </header>
     <main id="main">
       <section class="hero">
@@ -31,9 +40,20 @@
           <p class="eyebrow light">SUPPORT, WITHOUT THE FRICTION</p>
           <h1>Find clarity.<br /><em>Move forward.</em></h1>
           <p class="hero-lede">
-            Practical answers for the moments when you need them. Browse our guides by topic and
-            read them in full.
+            Practical answers for the moments when you need them. Browse our guides or search for a
+            specific question.
           </p>
+          <form class="search-form" id="searchForm" role="search">
+            <span class="search-symbol" aria-hidden="true">⌕</span
+            ><label class="sr-only" for="searchInput">Search articles</label>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Try “change my email address”"
+              autocomplete="off"
+            />
+            <button type="submit">Search</button>
+          </form>
         </div>
         <aside class="hero-aside" aria-label="Library information">
           <span class="aside-index">NORIA KNOWLEDGE LIBRARY</span>
@@ -44,6 +64,10 @@
         <div class="hero-bottom"><span>HELP CENTRE</span><span>ARTICLES & SUPPORT</span></div>
       </section>
 
+      <section class="intro-row">
+        <p class="eyebrow">BROWSE BY TOPIC</p>
+        <p>Explore guidance on the subjects that matter to you.</p>
+      </section>
       <section class="topic-section page-section" id="topics">
         <div class="section-title">
           <div>
@@ -55,6 +79,19 @@
         <div class="topic-grid" id="topicGrid"></div>
       </section>
 
+      <section class="featured-section">
+        <div class="page-section">
+          <div class="section-title">
+            <div>
+              <p class="eyebrow">EDITOR'S SELECTION</p>
+              <h2>Worth knowing <em>first.</em></h2>
+            </div>
+            <a class="inline-link" href="#library">View all articles</a>
+          </div>
+          <div class="featured-grid" id="featuredGrid"></div>
+        </div>
+      </section>
+
       <section class="library-section page-section" id="library">
         <div class="library-heading">
           <div>
@@ -64,11 +101,68 @@
               Browse the latest guidance and select an article to view the full information.
             </p>
           </div>
+          <div class="library-tools">
+            <label for="topicFilter">TOPIC</label
+            ><select id="topicFilter">
+              <option value="all">All collections</option></select
+            ><label for="sortFilter">SORT BY</label
+            ><select id="sortFilter">
+              <option value="featured">Recommended</option>
+              <option value="az">Title A–Z</option>
+            </select>
+          </div>
         </div>
         <div class="library-summary">
           <strong id="articleCount"></strong><span>HELP & INFORMATION</span>
         </div>
         <div class="article-catalog" id="articleCatalog"></div>
+        <p class="empty-state" id="emptyState" hidden>
+          No guides match these filters. Choose another collection or search term.
+        </p>
+      </section>
+
+      <section class="support-section" id="contact">
+        <div class="support-left">
+          <p class="eyebrow light">A QUESTION WE HAVEN'T COVERED?</p>
+          <h2>Let's make the<br /><em>next step clear.</em></h2>
+          <p>Tell us what you need help with and our support team will review your request.</p>
+        </div>
+        <form id="supportForm" class="support-form" novalidate>
+          <div class="field-pair">
+            <label
+              >Your name<input
+                name="name"
+                id="name"
+                required
+                minlength="2"
+                placeholder="Full name" /></label
+            ><label
+              >Email address<input
+                name="email"
+                id="email"
+                type="email"
+                required
+                placeholder="name@example.com"
+            /></label>
+          </div>
+          <label
+            >What is this about?<select name="topic" id="supportTopic" required>
+              <option value="">Choose a topic</option>
+            </select></label
+          >
+          <label
+            >How can we help?<textarea
+              name="message"
+              id="message"
+              required
+              minlength="20"
+              rows="4"
+              placeholder="Describe what happened and what you have already tried..."
+            ></textarea>
+          </label>
+          <button class="cream-button" type="submit">Submit request</button>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
       </section>
     </main>
     <footer class="footer">
