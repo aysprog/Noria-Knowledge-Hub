@@ -56,6 +56,34 @@ window.NORIA_ARTICLES = [
       "A legitimate password reset should never ask you to send your current password to a person by email, chat or phone.",
   },
   {
+    id: "two-factor",
+    category: "Account & profile",
+    title: "Set up two-factor authentication",
+    deck: "Add a second verification step to make unauthorised access harder.",
+    read: "6 min",
+    featured: true,
+    sections: [
+      [
+        "What two-factor authentication does",
+        "Two-factor authentication (2FA) asks for another proof of identity in addition to your password. Depending on the service, this may be an authenticator-app code, a security key, or a code sent to a verified device. It reduces the risk of password-only account access.",
+      ],
+      [
+        "Set it up carefully",
+        "1. Open Security settings after signing in. 2. Select Two-factor authentication or Two-step verification. 3. Choose an available method. 4. Follow the setup instructions and complete the test verification. 5. Save recovery codes if they are provided.",
+      ],
+      [
+        "Protect your recovery codes",
+        "Recovery codes can help when your phone is lost or unavailable. Store them in a trusted password manager or another secure offline location. Do not keep the only copy as a screenshot on the same phone used for authentication.",
+      ],
+      [
+        "If you lose your device",
+        "Use a saved recovery code or the service's official account-recovery process. Be prepared to verify ownership. Do not pay anyone who claims they can bypass security checks.",
+      ],
+    ],
+    callout:
+      "An authenticator app or security key is generally preferable to SMS when the service supports it, but the best method is one you can use and recover securely.",
+  },
+  {
     id: "billing-payment-methods",
     category: "Payments & billing",
     title: "Add or replace a payment method",
@@ -110,6 +138,34 @@ window.NORIA_ARTICLES = [
     ],
     callout:
       "A refund request is not a guarantee of approval. The decision depends on the relevant terms and the facts of the transaction.",
+  },
+  {
+    id: "invoice-receipt",
+    category: "Payments & billing",
+    title: "Find an invoice and understand its details",
+    deck: "Locate a billing record and check the fields that matter for your records.",
+    read: "4 min",
+    featured: false,
+    sections: [
+      [
+        "Locate the invoice",
+        "Open Billing history, Orders or Payment activity in your account. Select the relevant transaction and look for Download invoice, View receipt or Print. If you cannot see the purchase, check that you are signed into the account used at checkout.",
+      ],
+      [
+        "Review the important fields",
+        "Check the invoice number, issue date, seller details, billing name, description, subtotal, tax, total and payment status. The exact fields vary by provider and location. Contact the seller if a legally required detail appears incorrect.",
+      ],
+      [
+        "Keep records organised",
+        "Save the original PDF in a secure folder with a consistent file name, such as YYYY-MM-DD-invoice-reference. Keep records only as long as you need them for accounting, reimbursement or applicable legal requirements.",
+      ],
+      [
+        "If the invoice is missing",
+        "Check whether the purchase was processed by an app store or payment partner. Search your email for the order confirmation and use its reference when contacting the provider.",
+      ],
+    ],
+    callout:
+      "A payment confirmation and a tax invoice are not always the same document. Check which record your organisation actually requires.",
   },
   {
     id: "privacy-controls",
@@ -168,6 +224,34 @@ window.NORIA_ARTICLES = [
       "When uncertain, do not reply or click. Open the service independently using its official app or known website.",
   },
   {
+    id: "device-session",
+    category: "Privacy & security",
+    title: "Review signed-in devices and active sessions",
+    deck: "Find unfamiliar sessions and take sensible steps to secure your account.",
+    read: "4 min",
+    featured: false,
+    sections: [
+      [
+        "Open the security overview",
+        "Look for Devices, Active sessions, Where you're signed in or Login activity. The service may show device type, approximate location, browser and recent activity. Location estimates can be imprecise, especially on mobile networks or VPNs.",
+      ],
+      [
+        "Identify what you recognise",
+        "Compare the device and time with your own recent activity. A browser update, shared network or mobile carrier can make a familiar session look slightly different. If you are unsure, sign out of the session and sign in again on your own device.",
+      ],
+      [
+        "Secure an unfamiliar session",
+        "Use the service's sign-out or revoke-session option. Change your password if you suspect someone else accessed the account, and enable two-factor authentication. Review recovery email and phone details for changes you did not make.",
+      ],
+      [
+        "Build a simple routine",
+        "Review active sessions after using a public or shared device, after receiving an unexpected sign-in alert, or whenever account activity looks unusual.",
+      ],
+    ],
+    callout:
+      "An unfamiliar approximate location alone does not prove a breach. Look at the full context and secure the account if you cannot verify the session.",
+  },
+  {
     id: "order-status",
     category: "Orders & delivery",
     title: "Track an order and understand status updates",
@@ -224,6 +308,34 @@ window.NORIA_ARTICLES = [
       "Some items, sellers or delivery services cannot be redirected after dispatch. Check the available options before relying on a change.",
   },
   {
+    id: "damaged-item",
+    category: "Orders & delivery",
+    title: "Report a damaged, incorrect or missing item",
+    deck: "Document the problem clearly and request the right kind of resolution.",
+    read: "5 min",
+    featured: false,
+    sections: [
+      [
+        "Keep the packaging and evidence",
+        "If an item arrives damaged, photograph the outer packaging, shipping label and damage before discarding anything. For an incorrect item, photograph the item and its product label. Keep all parts and packaging until the seller advises what to do.",
+      ],
+      [
+        "Check the order details",
+        "Compare the item received with the order confirmation, including model, size, colour and quantity. Note whether the parcel was sealed and whether anything appears to be missing.",
+      ],
+      [
+        "Contact the seller",
+        "Use the order's help or returns route. Provide the order reference, a short description, relevant photographs and the resolution you are requesting. Follow the seller's instructions for return shipping or collection.",
+      ],
+      [
+        "Keep the case traceable",
+        "Save the enquiry reference and any return tracking number. If you send the item back, keep proof of handover until the case is resolved.",
+      ],
+    ],
+    callout:
+      "Do not attempt repairs or dispose of damaged goods before checking the seller's evidence and return requirements.",
+  },
+  {
     id: "troubleshoot-basics",
     category: "Troubleshooting",
     title: "A reliable first-check routine when something fails",
@@ -278,5 +390,33 @@ window.NORIA_ARTICLES = [
     ],
     callout:
       "Before clearing cookies, make sure you know how to access your account and can receive any required verification message.",
+  },
+  {
+    id: "contact-support",
+    category: "Troubleshooting",
+    title: "Write a support request that gets to the point",
+    deck: "A concise, complete report helps the team understand and investigate your issue.",
+    read: "4 min",
+    featured: false,
+    sections: [
+      [
+        "Use a useful subject",
+        "Summarise the problem in a few words, such as “Unable to download invoice” or “Order status has not updated”. Avoid vague subjects such as “Help” when more detail is possible.",
+      ],
+      [
+        "Include the essential context",
+        "Provide the account email if appropriate, order or reference number, date and time, device/browser details, and the exact action that failed. Explain what you expected and what happened instead.",
+      ],
+      [
+        "List what you tried",
+        "Mention the troubleshooting steps and their results. This prevents the support team from asking you to repeat checks that have already been completed.",
+      ],
+      [
+        "Protect your information",
+        "Attach only relevant screenshots and hide personal details that are not needed. Never include passwords, one-time codes, recovery codes or full card numbers. Keep the support reference for follow-up.",
+      ],
+    ],
+    callout:
+      "A strong support message is specific, factual and easy to reproduce. More personal information does not automatically make a report more useful.",
   },
 ];

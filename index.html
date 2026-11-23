@@ -25,6 +25,7 @@
         <a href="#topics">Topics</a><a href="#library">Article library</a
         ><a href="#contact">Get support</a>
       </nav>
+      <a class="team-link" href="admin.html">Staff portal</a>
       <button
         class="mobile-menu"
         id="mobileMenu"
@@ -53,7 +54,13 @@
               autocomplete="off"
             />
             <button type="submit">Search</button>
+            <div class="suggestions" id="suggestions" hidden></div>
           </form>
+          <div class="quick-search">
+            <span>Popular:</span><button data-search="password">Password</button
+            ><button data-search="refund">Refunds</button
+            ><button data-search="two-factor">Two-factor security</button>
+          </div>
         </div>
         <aside class="hero-aside" aria-label="Library information">
           <span class="aside-index">NORIA KNOWLEDGE LIBRARY</span>
