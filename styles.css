@@ -1635,6 +1635,84 @@ button:hover {
   }
 }
 
+/* Collections / Find your subject: balanced cards and consistent internal rhythm */
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  border: 0;
+  align-items: stretch;
+}
+.topic-card {
+  min-height: 320px;
+  height: 100%;
+  padding: 32px 30px 26px !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 20px !important;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 8px 28px rgba(66, 29, 72, 0.055);
+}
+.topic-card:first-child {
+  border-left: 1px solid var(--line) !important;
+}
+.topic-card .topic-number {
+  margin: 0 0 12px;
+}
+.topic-card .topic-symbol {
+  margin: 0 0 22px !important;
+  width: 72px;
+  height: 72px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: #e8d8c4;
+  color: #54232b;
+  font-size: 32px;
+}
+.topic-card h3 {
+  margin: 0 0 14px !important;
+  font-size: clamp(19px, 1.4vw, 24px) !important;
+  line-height: 1.25;
+}
+.topic-card p {
+  font-size: 15px !important;
+  line-height: 1.65 !important;
+  margin: 0 0 26px !important;
+  max-width: 34ch;
+}
+.topic-card button {
+  margin-top: auto !important;
+  padding: 0 0 5px !important;
+  border: 0 !important;
+  font-size: 13px !important;
+}
+.topic-card button span {
+  margin-left: 10px;
+}
+.topic-card:hover {
+  background: #fff !important;
+  border-color: #d3bdd3 !important;
+  transform: translateY(-5px);
+}
+@media (max-width: 1050px) {
+  .topic-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .topic-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .topic-card {
+    min-height: 260px;
+    padding: 25px !important;
+  }
+}
+
 /* Accent for italic headings on light backgrounds */
 .section-title h2 em,
 .library-heading h2 em {

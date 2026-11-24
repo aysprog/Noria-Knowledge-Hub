@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Noria — Staff workspace</title>
+    <title>Noria — Staff sign in</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap"
@@ -12,87 +12,208 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="admin.css" />
   </head>
-  <body class="admin-body">
-    <header class="topbar">
-      <a class="wordmark" href="index.html"
-        ><span class="monogram">N</span><span>NORIA<small>STAFF WORKSPACE</small></span></a
-      >
-      <div class="staff-actions"><a class="team-link" href="index.html">Return to library</a></div>
-    </header>
-    <main class="admin-main">
-      <div class="admin-heading">
-        <div>
-          <p class="eyebrow">CONTENT OPERATIONS</p>
-          <h1>Editorial <em>workspace.</em></h1>
-          <p>Manage the guide collection and monitor reader activity across the knowledge hub.</p>
+  <body class="admin-body noria-staff">
+    <section class="staff-login" id="staffLogin">
+      <div class="login-art">
+        <a class="login-brand" href="index.html"
+          ><span class="login-mark">N</span><span>NORIA<small>SUPPORT & GUIDANCE</small></span></a
+        >
+        <div class="login-message">
+          <p class="eyebrow">THE NORIA TEAM SPACE</p>
+          <h1>Good support<br />starts <em>behind</em><br />the scenes.</h1>
+          <p>
+            A quieter workspace for the people who keep every answer thoughtful, useful and up to
+            date.
+          </p>
+        </div>
+        <div class="login-foot">
+          <span>CONTENT · INSIGHTS · COMMUNITY</span><span>© NORIA 2026</span>
         </div>
       </div>
-      <section class="stats" id="stats"></section>
-      <section class="admin-panel">
-        <div class="panel-heading">
-          <div>
-            <p class="eyebrow">KNOWLEDGE MANAGEMENT</p>
-            <h2>Article register</h2>
+      <div class="login-side">
+        <a class="back-library" href="index.html">← Back to knowledge hub</a>
+        <form class="login-card" id="staffLoginForm">
+          <div class="login-icon">✳</div>
+          <p class="eyebrow">STAFF ACCESS</p>
+          <h2>Welcome back.</h2>
+          <p class="login-intro">
+            Sign in to manage articles, review feedback and keep the knowledge hub current.
+          </p>
+          <label for="staffEmail">Work email</label
+          ><input
+            id="staffEmail"
+            type="email"
+            autocomplete="username"
+            placeholder="you@noria.help"
+            required
+          />
+          <label for="staffPassword">Password</label>
+          <div class="password-field">
+            <input
+              id="staffPassword"
+              type="password"
+              autocomplete="current-password"
+              placeholder="Enter your password"
+              required
+            /><button type="button" id="togglePassword" aria-label="Show password">Show</button>
           </div>
-          <button class="admin-primary" id="newArticle">+ New article</button>
+          <p class="login-error" id="loginError" role="alert"></p>
+          <button class="login-submit" type="submit">Sign in to workspace <span>→</span></button>
+          <div class="demo-access">
+            <strong>DEMO ACCESS</strong><span>Email: staff@noria.help</span
+            ><span>Password: NoriaDemo26!</span>
+          </div>
+          <p class="login-note">
+            Demo sign-in for this front-end project. Production access requires server-side
+            authentication.
+          </p>
+        </form>
+      </div>
+    </section>
+    <div id="staffWorkspace" hidden>
+      <header class="topbar">
+        <a class="wordmark" href="index.html"
+          ><span class="monogram">N</span><span>NORIA<small>STAFF WORKSPACE</small></span></a
+        >
+        <div class="staff-actions">
+          <span class="signed-in-label">● Signed in</span
+          ><a class="team-link" href="index.html">Return to library</a
+          ><button class="logout-button" id="staffLogout">Sign out ↗</button>
         </div>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Article</th>
-                <th>Collection</th>
-                <th>Visibility</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody id="articleRows"></tbody>
-          </table>
+      </header>
+      <main class="admin-main">
+        <div class="admin-heading">
+          <div>
+            <p class="eyebrow">CONTENT OPERATIONS</p>
+            <h1>Editorial <em>workspace.</em></h1>
+            <p>
+              Manage the guide collection, review reader feedback and monitor support enquiries.
+            </p>
+          </div>
         </div>
-      </section>
-    </main>
-    <dialog id="editor" class="editor-dialog">
-      <form id="editorForm">
-        <button type="button" class="dialog-close" id="closeEditor" aria-label="Close">×</button>
-        <p class="eyebrow">ARTICLE EDITOR</p>
-        <h2 id="editorHeading">Create article</h2>
-        <input type="hidden" name="id" /><label
-          >Title<input name="title" required minlength="8" /></label
-        ><label
-          >Collection<select name="category" required>
-            <option>Account & profile</option>
-            <option>Payments & billing</option>
-            <option>Privacy & security</option>
-            <option>Orders & delivery</option>
-            <option>Troubleshooting</option>
-          </select></label
-        ><label
-          >Short description<textarea
-            name="deck"
-            required
-            minlength="20"
-            rows="2"
-          ></textarea></label
-        ><label>Reading time<input name="read" value="4 min" /></label
-        ><label
-          >Sections <small>One section per line. Format: Heading | Paragraph</small
-          ><textarea
-            name="sections"
-            required
-            rows="9"
-            placeholder="Before you begin | Explain the first step..."
-          ></textarea></label
-        ><label>Important note<textarea name="callout" rows="2"></textarea></label
-        ><label class="check-label"
-          ><input type="checkbox" name="featured" /> Feature on home page</label
-        ><label
-          >Status<select name="status">
-            <option value="published">Published</option>
-            <option value="draft">Draft</option>
-          </select></label
-        ><button class="admin-primary" type="submit">Save article</button>
-      </form>
-    </dialog>
+        <section class="stats" id="stats"></section>
+        <section class="admin-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">KNOWLEDGE MANAGEMENT</p>
+              <h2>Article register</h2>
+            </div>
+            <button class="admin-primary" id="newArticle">+ New article</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Article</th>
+                  <th>Collection</th>
+                  <th>Visibility</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="articleRows"></tbody>
+            </table>
+          </div>
+        </section>
+        <section class="admin-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">VOICE OF THE READER</p>
+              <h2>Feedback & enquiries</h2>
+            </div>
+          </div>
+          <div class="admin-columns">
+            <div>
+              <h3>Article feedback</h3>
+              <div id="feedbackRows" class="record-list"></div>
+            </div>
+            <div>
+              <h3>Support requests</h3>
+              <div id="requestRows" class="record-list"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <dialog id="editor" class="editor-dialog">
+        <form id="editorForm">
+          <button type="button" class="dialog-close" id="closeEditor" aria-label="Close">×</button>
+          <p class="eyebrow">ARTICLE EDITOR</p>
+          <h2 id="editorHeading">Create article</h2>
+          <input type="hidden" name="id" /><label
+            >Title<input name="title" required minlength="8" /></label
+          ><label
+            >Collection<select name="category" required>
+              <option>Account & profile</option>
+              <option>Payments & billing</option>
+              <option>Privacy & security</option>
+              <option>Orders & delivery</option>
+              <option>Troubleshooting</option>
+            </select></label
+          ><label
+            >Short description<textarea
+              name="deck"
+              required
+              minlength="20"
+              rows="2"
+            ></textarea></label
+          ><label>Reading time<input name="read" value="4 min" /></label
+          ><label
+            >Sections <small>One section per line. Format: Heading | Paragraph</small
+            ><textarea
+              name="sections"
+              required
+              rows="9"
+              placeholder="Before you begin | Explain the first step..."
+            ></textarea></label
+          ><label>Important note<textarea name="callout" rows="2"></textarea></label
+          ><label class="check-label"
+            ><input type="checkbox" name="featured" /> Feature on home page</label
+          ><label
+            >Status<select name="status">
+              <option value="published">Published</option>
+              <option value="draft">Draft</option>
+            </select></label
+          ><button class="admin-primary" type="submit">Save article</button>
+        </form>
+      </dialog>
+    </div>
+    <script>
+      (() => {
+        const login = document.getElementById("staffLogin"),
+          workspace = document.getElementById("staffWorkspace"),
+          form = document.getElementById("staffLoginForm"),
+          error = document.getElementById("loginError");
+        const key = "noria_staff_session";
+        function show() {
+          const ok = sessionStorage.getItem(key) === "active";
+          login.hidden = ok;
+          workspace.hidden = !ok;
+          document.title = ok ? "Noria — Staff workspace" : "Noria — Staff sign in";
+        }
+        show();
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const email = document.getElementById("staffEmail").value.trim().toLowerCase(),
+            pass = document.getElementById("staffPassword").value;
+          if (email === "staff@noria.help" && pass === "NoriaDemo26!") {
+            sessionStorage.setItem(key, "active");
+            error.textContent = "";
+            show();
+          } else {
+            error.textContent =
+              "Those details do not match the demo staff account. Please try again.";
+          }
+        });
+        document.getElementById("togglePassword").addEventListener("click", (e) => {
+          const p = document.getElementById("staffPassword");
+          p.type = p.type === "password" ? "text" : "password";
+          e.currentTarget.textContent = p.type === "password" ? "Show" : "Hide";
+        });
+        document.getElementById("staffLogout").addEventListener("click", () => {
+          sessionStorage.removeItem(key);
+          show();
+        });
+      })();
+    </script>
     <script src="data.js"></script>
     <script src="admin.js"></script>
   </body>

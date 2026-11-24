@@ -368,3 +368,382 @@ button:hover,
     transition: none !important;
   }
 }
+
+/* Noria staff sign-in — distinctive split editorial layout */
+[hidden] {
+  display: none !important;
+}
+.noria-staff {
+  min-height: 100vh;
+  background: #f8f4ef;
+}
+.staff-login {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(320px, 0.95fr) 1.05fr;
+  background: #f7f8f4;
+}
+.login-art {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: clamp(28px, 5vw, 68px);
+  color: #f5f6ef;
+  background:
+    radial-gradient(circle at 15% 85%, rgba(238, 171, 119, 0.28), transparent 32%),
+    linear-gradient(145deg, #2e1532, #4d2254 65%, #5f495f);
+}
+.login-art:before,
+.login-art:after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(241, 232, 241, 0.17);
+  border-radius: 50%;
+  width: 440px;
+  height: 440px;
+  right: -210px;
+  top: 18%;
+  box-shadow:
+    0 0 0 55px rgba(241, 232, 241, 0.025),
+    0 0 0 110px rgba(241, 232, 241, 0.025);
+}
+.login-art:after {
+  width: 250px;
+  height: 250px;
+  right: 12%;
+  top: auto;
+  bottom: -145px;
+}
+.login-brand {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+.login-brand small {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: #d2bbd2;
+  margin-top: 4px;
+}
+.login-mark {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  border: 1px solid #eda46c;
+  border-radius: 14px;
+  font-family: Georgia;
+  font-size: 24px;
+}
+.login-message {
+  position: relative;
+  z-index: 1;
+  max-width: 570px;
+  margin-block: 70px;
+}
+.login-message .eyebrow {
+  color: #f5cbab;
+}
+.login-message h1 {
+  font:
+    clamp(48px, 6vw, 82px)/0.99 "DM Serif Display",
+    Georgia,
+    serif;
+  letter-spacing: -0.04em;
+  margin: 20px 0;
+}
+.login-message h1 em {
+  color: #f5ccad;
+  font-weight: 400;
+}
+.login-message > p:last-child {
+  max-width: 410px;
+  color: #dbc9db;
+  line-height: 1.8;
+  font-size: 15px;
+}
+.login-foot {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  color: #f6d0b4;
+}
+.login-side {
+  display: flex;
+  flex-direction: column;
+  padding: 30px clamp(24px, 5vw, 72px);
+}
+.back-library {
+  align-self: flex-end;
+  color: #715771;
+  text-decoration: none;
+  font-size: 13px;
+}
+.login-card {
+  width: min(430px, 100%);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding-block: 38px;
+  animation: login-arrive 0.55s ease both;
+}
+@keyframes login-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.login-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  background: #e6dae6;
+  color: #493849;
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+.login-card .eyebrow {
+  color: #7c607c;
+  margin: 0 0 9px;
+  font-size: 10px;
+  letter-spacing: 0.17em;
+  font-weight: 800;
+}
+.login-card h2 {
+  font:
+    42px/1.1 "DM Serif Display",
+    Georgia,
+    serif;
+  color: #401c45;
+  margin: 0 0 12px;
+}
+.login-intro {
+  color: #826482;
+  line-height: 1.75;
+  font-size: 14px;
+  margin: 0 0 28px;
+}
+.login-card label {
+  font-size: 12px;
+  font-weight: 800;
+  color: #522459;
+  margin: 0 0 8px;
+}
+.login-card > input,
+.password-field input {
+  width: 100%;
+  height: 49px;
+  border: 1px solid #dfcfdf;
+  border-radius: 10px;
+  background: white;
+  padding: 0 14px;
+  color: #401c45;
+  outline: none;
+  margin-bottom: 18px;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.login-card input:focus {
+  border-color: #816381;
+  box-shadow: 0 0 0 4px rgba(129, 99, 129, 0.13);
+}
+.password-field {
+  position: relative;
+}
+.password-field input {
+  padding-right: 65px;
+}
+.password-field button {
+  position: absolute;
+  right: 10px;
+  top: 11px;
+  border: 0;
+  background: transparent;
+  color: #6c536c;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.login-submit {
+  height: 52px;
+  border: 0;
+  border-radius: 10px;
+  background: #4a2150;
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  transition:
+    transform 0.2s,
+    background 0.2s,
+    box-shadow 0.2s;
+}
+.login-submit:hover {
+  background: #4a394a;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(74, 33, 80, 0.18);
+}
+.login-error {
+  min-height: 18px;
+  color: #a13f45;
+  font-size: 12px;
+  margin: 0 0 9px;
+}
+.demo-access {
+  display: grid;
+  gap: 6px;
+  background: #f3ecf3;
+  border: 1px solid #e2d4e2;
+  border-radius: 11px;
+  padding: 14px 16px;
+  margin-top: 22px;
+  color: #654e65;
+  font-size: 12px;
+}
+.demo-access strong {
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  color: #594559;
+  margin-bottom: 2px;
+}
+.login-note {
+  font-size: 10px;
+  line-height: 1.6;
+  color: #997a99;
+  margin: 14px 0 0;
+}
+.staff-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.signed-in-label {
+  font-size: 11px;
+  color: #6d546d;
+}
+.logout-button {
+  border: 1px solid #ddccdd;
+  background: #fff;
+  border-radius: 9px;
+  padding: 9px 13px;
+  color: #453545;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.logout-button:hover {
+  background: #f2eaf2;
+}
+@media (max-width: 850px) {
+  .staff-login {
+    grid-template-columns: 1fr;
+  }
+  .login-art {
+    min-height: 340px;
+    padding: 28px;
+  }
+  .login-message {
+    margin: 48px 0 20px;
+  }
+  .login-message h1 {
+    font-size: 48px;
+  }
+  .login-foot {
+    font-size: 8px;
+  }
+  .login-side {
+    min-height: 600px;
+  }
+  .back-library {
+    align-self: flex-start;
+  }
+}
+@media (max-width: 520px) {
+  .login-art {
+    min-height: 310px;
+  }
+  .login-message h1 {
+    font-size: 42px;
+  }
+  .login-foot {
+    flex-wrap: wrap;
+  }
+  .staff-actions {
+    gap: 8px;
+  }
+  .signed-in-label {
+    display: none;
+  }
+  .staff-actions .team-link {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .login-card {
+    animation: none;
+  }
+  .login-submit,
+  .login-card input {
+    transition: none;
+  }
+}
+
+/* Remove unnecessary vertical whitespace above the sign-in form */
+.login-side {
+  justify-content: flex-start;
+  padding-top: clamp(18px, 3vh, 30px);
+}
+.back-library {
+  margin-bottom: clamp(14px, 2.5vh, 24px);
+}
+.login-card {
+  margin: 0 auto auto;
+  width: min(430px, 100%);
+  padding-top: clamp(10px, 2vh, 20px);
+  padding-bottom: 28px;
+}
+.login-icon {
+  margin-bottom: 22px;
+}
+.login-intro {
+  margin-bottom: 20px;
+}
+@media (max-width: 850px) {
+  .login-side {
+    padding-top: 22px;
+  }
+  .login-card {
+    margin: 0 auto;
+    width: min(430px, 100%);
+    padding-top: 8px;
+  }
+}
+
+/* Sign-in screen fills the viewport without section padding */
+.staff-login {
+  padding-block: 0;
+}

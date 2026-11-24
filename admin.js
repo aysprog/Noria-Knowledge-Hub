@@ -39,6 +39,24 @@ function render() {
         `<tr><td><strong>${esc(a.title)}</strong></td><td>${esc(a.category)}</td><td><span class="status-pill">${a.status || "published"}</span></td><td><button data-edit="${esc(a.id)}">Edit</button><button data-toggle="${esc(a.id)}">${a.status === "draft" ? "Publish" : "Unpublish"}</button><button data-delete="${esc(a.id)}">Delete</button></td></tr>`,
     )
     .join("");
+  $("feedbackRows").innerHTML =
+    feedback
+      .slice(-8)
+      .reverse()
+      .map(
+        (f) =>
+          `<div class="record"><strong>${esc(articles.find((a) => a.id === f.articleId)?.title || f.articleId)}</strong><small>${esc(f.value)} · ${new Date(f.date).toLocaleString()}</small></div>`,
+      )
+      .join("") || "<p>No feedback received yet.</p>";
+  $("requestRows").innerHTML =
+    requests
+      .slice(-8)
+      .reverse()
+      .map(
+        (r) =>
+          `<div class="record"><strong>${esc(r.ref)} · ${esc(r.name)}</strong><small>${esc(r.topic)} · ${esc(r.status)}<br>${esc(r.message)}</small></div>`,
+      )
+      .join("") || "<p>No support enquiries received yet.</p>";
 }
 function edit(a) {
   const f = $("editorForm");
@@ -106,3 +124,45 @@ document.addEventListener("click", (e) => {
   }
 });
 render();
+// Analytics panels are built dynamically to keep the workspace focused.
+(function addAnalytics() {
+  const main = document.querySelector(".admin-main");
+  const panel = document.createElement("section");
+  panel.className = "admin-panel";
+  panel.innerHTML =
+    '<div class="panel-heading"><div><p class="eyebrow">DISCOVERY INSIGHTS</p><h2>Content performance</h2></div></div><div class="admin-columns"><div><h3>Most viewed guides</h3><div id="popularRows" class="record-list"></div></div><div><h3>Recent search terms</h3><div id="searchRows" class="record-list"></div></div></div>';
+  main.insertBefore(panel, main.lastElementChild);
+  const events = get(AN, []),
+    views = events.filter((e) => e.type === "view"),
+    searches = events.filter((e) => e.type === "search");
+  const counts = {};
+  views.forEach((e) => (counts[e.articleId] = (counts[e.articleId] || 0) + 1));
+  document.getElementById("popularRows").innerHTML =
+    Object.entries(counts)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 6)
+      .map(
+        ([id, n]) =>
+          '<div class="record"><strong>' +
+          esc(articles.find((a) => a.id === id)?.title || id) +
+          "</strong><small>" +
+          n +
+          " view" +
+          (n === 1 ? "" : "s") +
+          "</small></div>",
+      )
+      .join("") || "<p>No article views recorded yet.</p>";
+  document.getElementById("searchRows").innerHTML =
+    searches
+      .slice(-10)
+      .reverse()
+      .map(
+        (e) =>
+          '<div class="record"><strong>' +
+          esc(e.term) +
+          "</strong><small>" +
+          new Date(e.date).toLocaleString() +
+          "</small></div>",
+      )
+      .join("") || "<p>No searches recorded yet.</p>";
+})();
